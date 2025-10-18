@@ -11,7 +11,7 @@ function Cell({cell}: CellProps) {
       className="cell"
       style={{
         left: x * SIZE,
-        top: y * SIZE,
+        top: y * SIZE
       }}
     />
   )
