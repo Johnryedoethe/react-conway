@@ -12,6 +12,8 @@ export function DemoPage() {
 
   return (
     <>
+      <h2>Demo</h2>
+
       <Viewport generation={generation} />
 
       <button onClick={() => setGeneration(generateNextGeneration(generation))}>

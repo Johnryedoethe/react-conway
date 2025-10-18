@@ -19,6 +19,12 @@ export function Layout() {
             <li>
               <Link to="/rules">Rules</Link>
             </li>
+            <li>
+              <Link to="/ways-to-implement">Ways to Implement</Link>
+            </li>
+            <li>
+              <Link to="/how-demo-was-implemented">How Demo Was Implemented</Link>
+            </li>
           </ul>
         </nav>
       </header>
