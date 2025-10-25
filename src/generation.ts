@@ -23,9 +23,9 @@ export function generateNextGeneration(currentGeneration: Set<string>): Set<stri
     }
   })
 
-  console.log(currentGeneration)
-  console.log(neighborCounts)
-  console.log(nextGeneration)
+  // console.log(currentGeneration)
+  // console.log(neighborCounts)
+  // console.log(nextGeneration)
 
   return nextGeneration
 }

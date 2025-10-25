@@ -40,6 +40,24 @@ const samples = {
 
 export function DemoPage() {
   const [generation, setGeneration] = useState<Set<string>>(samples.pulsar)
+  const [autoplayIntervalId, setAutoplayIntervalId] = useState<number | null>(null) 
+
+  const toggleAutoplay = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked) {
+      const intervalId = setInterval(
+        () => {
+          setGeneration((currentGeneration) => generateNextGeneration(currentGeneration))
+        },
+        500
+      )
+      setAutoplayIntervalId(intervalId)
+    } else {
+      if (autoplayIntervalId) {
+        clearInterval(autoplayIntervalId)
+        setAutoplayIntervalId(null)
+      }
+    }
+  }
 
   return (
     <>
@@ -64,6 +82,8 @@ export function DemoPage() {
       <button onClick={() => setGeneration(generateNextGeneration(generation))}>
         Next Generation
       </button>
+      <input type="checkbox" onChange={toggleAutoplay} />        
+      <label>Autoplay</label>
     </>
   )
 }
